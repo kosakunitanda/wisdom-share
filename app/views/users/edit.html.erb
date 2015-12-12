@@ -1,0 +1,58 @@
+
+<div class="container">
+  <div class="container-inner inner-sm clearfix">
+    <div class="row">
+      <div class="col-lg-3 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <span class="pull-left">プロファイル編集</span>
+              <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">
+                <%= form_for(@user) do |f| %>
+              
+                  <% if @user.errors.present? %>
+                    <div class="alert alert-danger">
+                      <%= alert %>
+                      <ul>
+                        <% @user.errors.full_messages.each do |full_message| %>
+                          <li>
+                            <%= full_message %>
+                          </li>
+                        <% end %> 
+                      </ul>
+                    </div>
+                  <% end %>
+                  <br>
+                  <div class="form-group">
+                      <label for="user_name" class="col-sm-2 control-label">name：</label>
+                      <div class="col-sm-4">
+                        <%= f.text_field :name, :class => "form-control", :placeholder => "名前を入力してください。" %>
+                      </div>    
+                  </div>
+                  <div class="form-group">
+                      <label for="user_email" class="col-sm-2 control-label">email：</label>
+                      <div class="col-sm-4">
+                        <%= f.text_field :email, :class => "form-control", :placeholder => "メールアドレスを入力してください。" %>
+                      </div>    
+                  </div>
+                  <div class="form-group">
+                      <label for="user_password" class="col-sm-2 control-label">password：</label>
+                      <div class="col-sm-4">  
+                        <%= f.password_field :password, :class => "form-control", :placeholder => "パスワードを入力してください。" %>
+                      </div>    
+                  </div>
+                  <div class="form-group">
+                      <label for="user_password_confirmation" class="col-sm-2 control-label">Confirmation：</label>
+                      <div class="col-sm-4">
+                        <%= f.password_field :password_confirmation, :class => "form-control", :placeholder => "パスワード再度入力してください。" %>
+                      </div>    
+                  </div>
+                <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+</div>

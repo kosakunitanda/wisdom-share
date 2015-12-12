@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="container">
     <%= link_to "Wisdom Share", root_path, id: "logo" %>
     <nav>
@@ -13,7 +13,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", '"#' %></li>     <!--編集画面へのリンク-->
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>     <!--編集画面へのリンク-->
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: "delete" %>
