@@ -14,7 +14,6 @@
                 	</div>
                 </div>
               </div>
-
           </div>
 
           <div class="panel panel-default">
@@ -25,7 +24,9 @@
                       </div>
                       <a href="#">
                         <div class="col-xs-8 text-right">
-                            <div class="huge">26</div>
+                              <% if @user.questions.any? %>
+                                <div class="huge"><%= @user.questions.count %></div>
+                              <% end %>
                             <div>New Comments!</div>
                         </div>
                       </a>
@@ -52,8 +53,6 @@
 
       </div>
       <div class="col-lg-3 col-md-8">
-          <!-- お知らせ -->
-           <%= render 'notice' %>
           <!-- 解決済みＱ&Ａ -->
            <%= render 'resolved' %>
           <!-- 回答待ちＱ&Ａ -->

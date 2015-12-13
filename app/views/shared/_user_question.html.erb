@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+      <span class="pull-left">
+            <i class="fa fa-comments fa-2x"> Questions!</i>
+      </span>
+      <div class="clearfix">
+      </div>
+  </div>
+  <div class="panel-body">
+        <% if current_user.questions.any? %>
+          <ol class="questions">
+            <%= render @questions %>
+          </ol>
+        <% end %>
+  
+      <a href="#">
+          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+      </a>
+  </div>
+</div>

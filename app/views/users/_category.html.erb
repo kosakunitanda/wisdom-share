@@ -1,11 +1,17 @@
           <div class="panel panel-default">
               <div class="panel-heading">
-                  <span class="pull-left">カテゴリ</span>
+                  <span class="pull-left">
+                    <i class="fa fa-book fa-2x"></i>
+                      Category
+                  </span>
                   <div class="clearfix"></div>
               </div>
               <div class="panel-body">
-                  <a href="#">
-                      <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                  </a>
+                    <% if @user.questions.any? %>
+                      <h3>Questions (<%= @user.questions.count %>)</h3>
+                      <ol class="questions">
+                        <%= render @questions %>
+                      </ol>
+                    <% end %>
               </div>
           </div>

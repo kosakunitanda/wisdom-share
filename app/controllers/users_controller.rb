@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
   def show # 追加
    @user = User.find(params[:id])
+   @questions = @user.questions
+
   end
 
     

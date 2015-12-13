@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+      <span class="pull-left">
+            <i class="fa fa-tasks fa-2x"> Tasks!</i>
+      </span>
+      <div class="clearfix">
+      </div>
+  </div>
+  <div class="panel-body">
+    <% if current_user.questions.any? %>
+      <ol class="questions">
+        <%= render @questions %>
+      </ol>
+    <% end %>
+    <a href="#">
+        <div class="col-xs-12 text-right">
+            <div>more ...</div>
+        </div>
+    </a>
+  </div>
+</div>
