@@ -8,11 +8,16 @@
       </div>
   </div>
   <div class="panel-body">
-        <% if current_user.questions.any? %>
-          <ol class="questions">
-            <%= render @questions %>
-          </ol>
-        <% end %>
+    
+      <% @questions.each do | question | %>
+          <%= question.content %>
+          (
+            <%= link_to "edit" , edit_answer_path(question) %>
+          )
+        <br>
+      <% end %>
+
+    
   
       <a href="#">
           <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

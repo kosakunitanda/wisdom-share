@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+      <div class="form-horizontal" role="form">
+        <%= form_for Answer.new do |f| %>
+          <%= f.text_area :content %>
+          <%= f.submit "create", class: "btn btn-primary" %>
+
+        <% end %>
+      </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+      <% @answers.each do | answer | %>
+          <%= answer.content %>
+          (
+            <%= link_to "edit" , edit_answer_path(question) %>
+          )
+        <br>
+      <% end %>
+
+    </div>
+</div>
